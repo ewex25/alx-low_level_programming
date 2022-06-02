@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- *  * main - function
+ *  * main_function
  *   * Description: hope it works
  *    * Return: returns o
  *     */
