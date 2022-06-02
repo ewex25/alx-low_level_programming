@@ -1,15 +1,10 @@
-#include stdio.h
-
+#include <stdio.h>
 /**
- * main - function
- *
- * Description: this is awesome
- *
- * return: returns 0
- *
- */
+ *  * main - function
+ *   * Description: this is fun
+ *    * Return: 0 if successful
+ *     */
 int main(void)
-{
-	puts("\"programming is like building a multilingual puzzle');
-	return(0); 
-}
+{ puts("\"Programming is like building a multilingual puzzle");
+	return (0); }
+
