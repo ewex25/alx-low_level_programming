@@ -2,11 +2,12 @@
 #include <time.h>
 #include <stdio.h>
 /**
-  * main - generates random number n
- * Description: dtermines n is positive, zero, or negative
- * Return: 0
+ * main - generates random number n
+ *  Description: dtermines n is positive, zero, or negative
+ *  Return: 0
  */
 int main(void)
+
 {
 	int n;
 
