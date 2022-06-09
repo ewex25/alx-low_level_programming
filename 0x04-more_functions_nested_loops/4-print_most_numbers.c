@@ -7,14 +7,14 @@
 
 void print_numbers(void)
 {
-	int i;
+	int c;
 
-	for (i = 0; i < 10; i++)
+	for (c = 0; c < 10; c++)
 	{
-		if (i != 2 && i != 4)
+		if (c != 2 && c != 4)
 		{
 
-		_putchar('0' + i);
+			_putchar(c + '0');
 		}
 	}
 
