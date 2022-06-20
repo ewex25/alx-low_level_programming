@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _memset - ewex
+ * _memset - ironnou
  * @s: pointer to char params
  * @b: data to change
  * @n: index
