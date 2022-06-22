@@ -1,3 +1,4 @@
+#!/bin/bash
 o "commit message"
 read message
 git add .
