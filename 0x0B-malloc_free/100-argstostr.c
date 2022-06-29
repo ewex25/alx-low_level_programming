@@ -2,96 +2,46 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- *word_len - finds the length of a word
- *@str:string to test
+ *argstostr - concatenates all arguements of a program
  *
- *Return:int
+ *@ac:arguement count
+ *@av:arguement vector
+ *
+ *Return:pointer to a new string
  */
-int word_len(char *str)
+char *argstostr(int ac, char **av)
 {
-	int i = 0, len = 0;
+	int i = 0, j = 0, z = 0, length = 0;
 
-	while (*(str + i) && *(str + i) != ' ')
-	{
-		len++;
-		i++;
-	}
-	return (len);
-}
-/**
- *word_count - counts the number of words
- *
- *@str:input
- *
- *Return:(no. of words)
- *
- */
-int word_count(char *str)
-{
-	int i = 0, len = 0, count = 0;
+	char *p;
 
-	for (i = 0; *(str + i); i++)
+	if (ac == 0 || av == NULL)
 	{
-		len++;
+		return (NULL);
 	}
-	for (i = 0; i < len; i++)
+	for (i = 0; i < ac; i++)
 	{
-		if (*(str + i) != ' ')
+		for (j = 0; av[i][j]; j++)
 		{
-			count++;
-			i += word_len(str + i);
+			length++;
 		}
+		length += 1;
 	}
-	return (count);
-}
-/**
- *strtow - splits a string into words
- *
- *@str:input
- *
- *Return:0 - success
- *
- */
-char **strtow(char *str)
-{
-	int i, words, w, letters, l;
-	char **p;
-
-	if (str == NULL || str[0] == '\0')
-	{
-		return (NULL);
-	}
-	words = word_count(str);
-	if (words == 0)
-	{
-		return (NULL);
-	}
-	p = malloc(sizeof(char *) * (words + 1));
+	p = malloc((sizeof(char) * length) + 1);
 	if (p == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < words; i++)
+	for (i = 0; i < ac; i++)
 	{
-		while (*(str + w) == ' ')
+		for (j = 0; av[i][j]; j++)
 		{
-			w++;
+			p[z] = av[i][j];
+			z++;
 		}
-		letters = word_len(str + w);
-		p[i] = malloc(sizeof(char) * (letters + 1));
-		if (p[i] == NULL)
-		{
-			for (; i >= 0; i--)
-				free(p[i]);
-			free(p);
-			return (NULL);
-		}
-		for (l = 0; l < letters; l++)
-		{
-			p[i][l] = str[w++];
-		}
-		p[i][l] = '\0';
+		p[z] = '\n';
+		z++;
 	}
-	p[i] = NULL;
+	p[z] = '\0';
 	return (p);
 }
