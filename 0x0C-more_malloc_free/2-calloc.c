@@ -1,32 +1,29 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- *array_range - creates an array of int
- *
- *@min:minimum
- *@max:maximum
- *
+ *_calloc - allocates memory for an array;
+ *@nmemb:no of elements
+ *@size:size of elements
  *Return:pointer
  */
-int *array_range(int min, int max)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int size, i = 0;
-	int *p;
+	unsigned int sizetot, i;
+	void *p;
 
-	if (min > max)
+	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
-	size = (max - min) + 1;
-	p = malloc(sizeof(int) * size);
-	if (!p)
+	sizetot = nmemb * size;
+	p = malloc(sizetot);
+	if (p == NULL)
 	{
-		free(p);
 		return (NULL);
 	}
-	for (i = 0; min <= max; min++, i++)
+	for (i = 0; i < sizetot; i++)
 	{
-		p[i] = min;
+		*((char *)(p) + i) = 0;
 	}
 	return (p);
 }
