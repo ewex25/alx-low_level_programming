@@ -1,29 +1,22 @@
+#include <stdio.h>
 #include "lists.h"
-
+#include <stdlib.h>
 /**
- * print_dlistint - printing function
- * @h: header of file
- * Return: number of nodes
+ *print_dlistint - prints the contents of a doubly linked list
+ *@h:list to print
+ *Return:number of nodes
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	size_t i = 0;
-	int iniprint = 0;
+	size_t node = 0;
 
-	for (i = 0; h != NULL; i++)
+	if (h == NULL)
+		return (node);
+	while (h)
 	{
-		if (h->prev != NULL && iniprint == 0)
-		{
-			h = h->prev;
-			continue;
-		}
-		else if (h->prev == NULL)
-		{
-			iniprint = 1;
-			i = 0;
-		}
 		printf("%i\n", h->n);
+		node++;
 		h = h->next;
 	}
-	return (i);
+	return (node);
 }
