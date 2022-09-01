@@ -1,16 +1,17 @@
-#ifndef LISTS_H
-#define LISTS_H
-
+#ifndef LINK_L
+#define LINK_L
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
-
 /**
- *struct dlistint_s - double linked list
- *@n:an integer
- *@prev:pointer to prev node
- *@next:pointer to next node
- *Description: double linked list structure
- */
+  * struct dlistint_s - doubly linked list
+  * @n: integer
+  * @prev: points to the previous node
+  * @next: points to the next node
+  *
+  * Description: doubly linked list node structure
+  * for Holberton project
+  */
 typedef struct dlistint_s
 {
 	int n;
@@ -26,4 +27,4 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 int sum_dlistint(dlistint_t *head);
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
-
+#endif
