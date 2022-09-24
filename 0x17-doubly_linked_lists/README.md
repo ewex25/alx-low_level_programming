@@ -1,1 +1,1 @@
-this is doubly linked project
+doubly linked 
